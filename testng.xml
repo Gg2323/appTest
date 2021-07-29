@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="false">
+  <test name="register"  preserve-order="true">
+    <classes>
+       <class name="testcase.RegisterPage"/>
+    </classes>
+  </test>
+  
+ <!-- 参数化 -->
+ <!-- 支持浏览器的类型：ie、chrome、firefox -->
+  <parameter name="browserType" value="chrome"></parameter>
+  <!-- 支持的Selenium的版本：2.x 、 3.x -->
+  <parameter name="seleniumVersion" value="2.x"></parameter>
+  <!-- 
+  	各个浏览器的相关的驱动文件路径 
+  	ie:			src/test/resources/IEDriverServer.exe
+  	chrome: 	src/test/resources/chromedriver.exe
+  	firefox:	src/test/resources/geckodriver.exe
+  -->
+  <parameter name="driverPath" value="src/test/resources/chromedriver.exe"></parameter>
+  
+  <listeners>
+  	<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+  	<listener class-name="listener.PhoenixListener"></listener>
+  </listeners>
+</suite> 
